@@ -18,8 +18,20 @@ var questions = [
     createQuestion(questions[i], i);
   }
 
-  $("#questions").append('<input type = "submit" value = "Submit">');
+  $("#questions").append('<input type = "submit" id = "submit" value = "Submit">');
 
+
+
+  $("#submit").on("click", function(e){
+
+
+    //Get user's answers
+    for(let i = 0; i < questions.length; i++){
+      console.log($("#input[name = " + i + "]").val());
+     }
+
+    e.preventDefault();
+  });
 
 
 
